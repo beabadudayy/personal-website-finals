@@ -1117,19 +1117,19 @@ section h2 {
   bottom: 0;
   left: 240px;
   right: 0;
-  min-height: 44px;
+  height: 44px;
   background: var(--grad-sidebar);
   color: rgba(255,255,255,0.7);
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem 1.5rem;
-  padding: 0.4rem 1.5rem;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
   z-index: 98;
   border-top: 1px solid rgba(255,255,255,0.08);
   transition: background 0.5s ease, left 0.3s ease;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .footer-brand {
@@ -2700,7 +2700,7 @@ section h2 {
   /* Main content takes full width */
   .main-content { margin-left: 0; padding: 1rem 1rem 5rem; }
   /* Footer spans full width on mobile */
-  .footer { left: 0; gap: 0.5rem 0.75rem; padding: 0.4rem 0.75rem; }
+  .footer { left: 0; gap: 0.75rem; padding: 0 0.75rem; }
   .footer-name, .footer-role, .footer-copy { font-size: 0.68rem; }
   .footer-avatar { width: 22px; height: 22px; }
   /* Layout fixes */
@@ -2779,13 +2779,14 @@ section h2 {
   .ms-gallery-bento { grid-template-columns: 1fr 1fr; grid-auto-rows: 120px; }
   .ms-gal-wide { grid-column: span 2; }
   /* Footer */
-  .footer { gap: 0.3rem 0.5rem; padding: 0.35rem 0.5rem; }
-  .footer-brand { justify-content: center; }
-  .footer-name, .footer-role, .footer-copy { font-size: 0.6rem; }
-  .footer-sep { font-size: 0.6rem; }
-  .footer-avatar { width: 20px; height: 20px; }
-  .footer-social-row { gap: 0.2rem; }
-  .footer-icon-btn { width: 24px; height: 24px; font-size: 0.7rem; }
+  .footer { gap: 0.5rem; padding: 0 0.5rem; }
+  .footer-brand { gap: 0.3rem; }
+  .footer-name { font-size: 0.6rem; }
+  .footer-role, .footer-copy { font-size: 0.55rem; }
+  .footer-sep { font-size: 0.55rem; }
+  .footer-avatar { width: 18px; height: 18px; }
+  .footer-social-row { gap: 0.15rem; }
+  .footer-icon-btn { width: 22px; height: 22px; font-size: 0.65rem; }
   /* Nav links — smaller at 540px */
   .db-nav-link { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
   /* Guestbook form */
@@ -2801,6 +2802,17 @@ section h2 {
   .db-hero { padding: 1.5rem 1rem 1rem; }
   /* Study beats widget stacking */
   .sb-np-title { font-size: 1.2rem; }
+}
+
+/* ── 400px: very small screens ── */
+@media (max-width: 400px) {
+  .footer { gap: 0.35rem; padding: 0 0.35rem; }
+  .footer-sep, .footer-role { display: none; }
+  .footer-name { font-size: 0.58rem; }
+  .footer-copy { font-size: 0.5rem; }
+  .footer-avatar { width: 16px; height: 16px; }
+  .footer-icon-btn { width: 20px; height: 20px; font-size: 0.6rem; }
+  .footer-social-row { gap: 0.1rem; }
 }
 
 
