@@ -36,6 +36,10 @@
           <span class="link-icon"><i class="bi bi-laptop-fill"></i></span>
           <span>IT Experience</span>
         </a>
+        <a href="#studybeats" @click.prevent="navigateTo('studybeats')" class="sidebar-link">
+          <span class="link-icon"><i class="bi bi-music-note-beamed"></i></span>
+          <span>Study Beats</span>
+        </a>
         <a href="#gallery" @click.prevent="navigateTo('gallery')" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-images"></i></span>
           <span>Photo Gallery</span>
@@ -116,9 +120,9 @@
               <div class="ms-edu-item">
                 <div class="ms-edu-yr">2022–26</div>
                 <div class="ms-edu-detail">
-                  <div class="ms-edu-deg">B.S. Computer Science</div>
+                  <div class="ms-edu-deg">B.S. Information Technology</div>
                   <div class="ms-edu-school">University of Science &amp; Technology of Southern Philippines</div>
-                  <span class="ms-edu-track">Software Engineering Track</span>
+                  <span class="ms-edu-track">Information Technology Track</span>
                 </div>
               </div>
               <div class="ms-edu-item">
@@ -133,7 +137,7 @@
             <div class="ms-edu-stats">
               <div class="ms-edu-stat"><span>4+</span><label>Years</label></div>
               <div class="ms-edu-stat"><span>Dean's</span><label>Lister</label></div>
-              <div class="ms-edu-stat"><span>BSCS</span><label>Degree</label></div>
+              <div class="ms-edu-stat"><span>BSIT</span><label>Degree</label></div>
             </div>
           </div>
         </div>
@@ -192,48 +196,148 @@
         <div class="ms-exp-header">
           <div>
             <span class="ms-tag"><i class="bi bi-laptop-fill"></i> IT Experience</span>
-            <h2 class="ms-card-title">Projects &amp; Skills</h2>
+            <h2 class="ms-card-title">School Projects &amp; Skills</h2>
           </div>
           <div class="ms-exp-stats">
-            <div class="ms-exp-stat"><span>4+</span><label>Projects</label></div>
-            <div class="ms-exp-stat"><span>8+</span><label>Skills</label></div>
-            <div class="ms-exp-stat"><span>2+</span><label>Yrs Exp</label></div>
+            <div class="ms-exp-stat"><span>2nd</span><label>Year</label></div>
+            <div class="ms-exp-stat"><span>BSIT</span><label>Student</label></div>
           </div>
         </div>
         <div class="ms-exp-grid">
           <div class="ms-exp-card">
             <div class="ms-exp-img">
-              <img src="https://i.pinimg.com/736x/cc/15/84/cc1584a9f472ef7f5a7958950fea804a.jpg" alt="E-Commerce" />
+              <img src="https://i.pinimg.com/1200x/d3/94/4a/d3944a08ec6880457799884ccd23afc5.jpg" alt="Personal Website" />
               <div class="ms-exp-overlay"><i class="bi bi-box-arrow-up-right"></i></div>
             </div>
             <div class="ms-exp-info">
-              <h4>E-Commerce Platform</h4>
-              <p>Full-stack online store with cart, auth &amp; payments.</p>
-              <div class="ms-chips"><span class="db-chip">Vue.js</span><span class="db-chip">NestJS</span><span class="db-chip">Supabase</span></div>
+              <h4>Personal Portfolio Website</h4>
+              <p>A responsive personal website built as a web programming final project using Vue.js and CSS.</p>
+              <div class="ms-chips"><span class="db-chip">Vue.js</span><span class="db-chip">CSS</span><span class="db-chip">HTML</span></div>
             </div>
           </div>
           <div class="ms-exp-card">
             <div class="ms-exp-img">
-              <img src="https://i.pinimg.com/736x/07/e3/05/07e305bdbf8c757fc084c6f5f0646a55.jpg" alt="Task App" />
+              <img src="https://i.pinimg.com/736x/8a/1a/62/8a1a62717c1a65ccbdf9b97b8484b41e.jpg" alt="Student Record System" />
               <div class="ms-exp-overlay"><i class="bi bi-box-arrow-up-right"></i></div>
             </div>
             <div class="ms-exp-info">
-              <h4>Task Manager App</h4>
-              <p>Collaborative task board with real-time updates.</p>
-              <div class="ms-chips"><span class="db-chip">React</span><span class="db-chip">TypeScript</span><span class="db-chip">PostgreSQL</span></div>
+              <h4>Student Record System</h4>
+              <p>A simple CRUD app for managing student info, built as a database systems course project.</p>
+              <div class="ms-chips"><span class="db-chip">PHP</span><span class="db-chip">MySQL</span><span class="db-chip">Bootstrap</span></div>
             </div>
           </div>
           <div class="ms-exp-card">
             <div class="ms-exp-img">
-              <img src="https://i.pinimg.com/736x/cd/6f/b7/cd6fb700f622912356bf5e0becad6f29.jpg" alt="Dashboard" />
+              <img src="https://i.pinimg.com/736x/69/a5/2b/69a52b7c1275c237e26eb15ab5ecc2eb.jpg" alt="Calculator App" />
               <div class="ms-exp-overlay"><i class="bi bi-box-arrow-up-right"></i></div>
             </div>
             <div class="ms-exp-info">
-              <h4>Social Dashboard</h4>
-              <p>Analytics dashboard with charts &amp; live feeds.</p>
-              <div class="ms-chips"><span class="db-chip">Vue.js</span><span class="db-chip">Vite</span><span class="db-chip">Chart.js</span></div>
+              <h4>To-Do List App</h4>
+              <p>A beginner JavaScript project — add, complete, and delete tasks, with localStorage to save data.</p>
+              <div class="ms-chips"><span class="db-chip">JavaScript</span><span class="db-chip">HTML</span><span class="db-chip">CSS</span></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ══ STUDY BEATS ══ -->
+      <section class="ms-section sb-section" id="studybeats">
+        <div class="sb-widget">
+
+          <!-- Left: Now Playing -->
+          <div class="sb-nowplaying">
+            <div class="sb-embed-wrap">
+              <div ref="sbEmbed" class="sb-embed-container"></div>
+              <span class="sb-now-badge"><i class="bi bi-broadcast"></i> Now Playing</span>
+            </div>
+            <div class="sb-np-meta">
+              <span class="ms-tag"><i class="bi bi-headphones"></i> Study Beats</span>
+              <h3 class="sb-np-title">{{ tracks[activeTrack].title }}</h3>
+              <p class="sb-np-artist">{{ tracks[activeTrack].artist }} &middot; {{ tracks[activeTrack].album }}</p>
+
+              <!-- Waveform -->
+              <div class="sb-waveform">
+                <span v-for="n in 36" :key="n" class="sb-wave-bar" :class="{ 'sb-wave-bar--active': isPlaying }" :style="`--i: ${n}`"></span>
+              </div>
+
+              <!-- Progress -->
+              <div class="sb-progress-row">
+                <span class="sb-time">{{ currentTimeStr }}</span>
+                <div class="sb-progress-track" @click="seekTrack">
+                  <div class="sb-progress-fill" :style="`width:${progressPct}%`"></div>
+                  <div class="sb-progress-thumb" :style="`left:${progressPct}%`"></div>
+                </div>
+                <span class="sb-time">{{ tracks[activeTrack].duration }}</span>
+              </div>
+
+              <!-- Controls -->
+              <div class="sb-controls">
+                <button class="sb-ctrl-btn" :class="{ 'sb-ctrl-btn--active': isShuffled }" @click="toggleShuffle" title="Shuffle"><i class="bi bi-shuffle"></i></button>
+                <button class="sb-ctrl-btn" @click="prevTrack" title="Previous"><i class="bi bi-skip-start-fill"></i></button>
+                <button class="sb-ctrl-btn sb-ctrl-play" @click="togglePlay" :title="isPlaying ? 'Pause' : 'Play'">
+                  <i :class="isPlaying ? 'bi bi-pause-fill' : 'bi bi-play-fill'"></i>
+                </button>
+                <button class="sb-ctrl-btn" @click="nextTrack" title="Next"><i class="bi bi-skip-end-fill"></i></button>
+                <button class="sb-ctrl-btn" :class="{ 'sb-ctrl-btn--active': isRepeat }" @click="toggleRepeat" :title="isRepeat === 'one' ? 'Repeat One' : isRepeat ? 'Repeat All' : 'Repeat'">
+                  <i :class="isRepeat === 'one' ? 'bi bi-repeat-1' : 'bi bi-repeat'"></i>
+                </button>
+              </div>
+
+              <!-- Volume -->
+              <div class="sb-volume-row">
+                <i class="bi bi-volume-down-fill sb-vol-icon"></i>
+                <input type="range" class="sb-vol-slider" v-model="volume" min="0" max="100" />
+                <i class="bi bi-volume-up-fill sb-vol-icon"></i>
+                <span class="sb-vol-num">{{ volume }}%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Playlist -->
+          <div class="sb-playlist">
+            <div class="sb-pl-header">
+              <span class="ms-tag"><i class="bi bi-music-note-list"></i> Playlist</span>
+              <h3 class="sb-pl-title">My Study Favorites</h3>
+              <div class="sb-pl-meta-row">
+                <p class="sb-pl-sub">{{ tracks.length }} tracks · perfect for focus</p>
+                <a
+                  href="https://open.spotify.com/playlist/5ZUBMQFakYVrkHCCpxvbUU?si=a6aeb4cf2c9d4555"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sb-spotify-btn"
+                >
+                  <svg class="sb-spotify-logo" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.52 17.305a.75.75 0 0 1-1.032.249c-2.83-1.729-6.39-2.12-10.586-1.161a.75.75 0 1 1-.334-1.463c4.592-1.048 8.532-.596 11.703 1.343a.75.75 0 0 1 .249 1.032zm1.472-3.27a.937.937 0 0 1-1.288.308c-3.238-1.99-8.172-2.567-12-1.407a.937.937 0 1 1-.545-1.794c4.37-1.327 9.8-.684 13.525 1.605a.937.937 0 0 1 .308 1.288zm.127-3.408C15.27 8.39 8.898 8.175 5.274 9.3a1.125 1.125 0 1 1-.652-2.154c4.213-1.277 11.218-1.03 15.643 1.633a1.125 1.125 0 0 1-1.146 1.848z"/></svg>
+                  Open in Spotify
+                </a>
+              </div>
+            </div>
+            <div class="sb-tracks">
+              <div
+                v-for="(track, i) in tracks"
+                :key="i"
+                class="sb-track"
+                :class="{ 'sb-track--active': i === activeTrack }"
+                @click="activeTrack = i"
+              >
+                <span class="sb-track-num">
+                  <span v-if="i === activeTrack && isPlaying" class="sb-eq">
+                    <span></span><span></span><span></span>
+                  </span>
+                  <span v-else>{{ String(i + 1).padStart(2, '0') }}</span>
+                </span>
+                <img :src="track.cover" :alt="track.title" class="sb-track-thumb" />
+                <div class="sb-track-info">
+                  <span class="sb-track-title">{{ track.title }}</span>
+                  <span class="sb-track-artist">{{ track.artist }}</span>
+                </div>
+                <div class="sb-track-right">
+                  <span class="sb-track-tag">{{ track.genre }}</span>
+                  <span class="sb-track-dur">{{ track.duration }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -308,9 +412,85 @@ import Guestbook from './components/Guestbook.vue'
 export default {
   name: 'App',
   components: { Guestbook },
+  computed: {
+    progressPct() {
+      if (!this.trackDurationSeconds) return 0
+      return Math.min((this.currentPosition / this.trackDurationSeconds) * 100, 100)
+    },
+    currentTimeStr() {
+      const s = Math.floor(this.currentPosition)
+      const m = Math.floor(s / 60)
+      const sec = s % 60
+      return `${m}:${sec.toString().padStart(2, '0')}`
+    }
+  },
   data() {
     return {
-      isDarkMode: false
+      isDarkMode: false,
+      isPlaying: false,
+      isShuffled: false,
+      isRepeat: false,
+      volume: 72,
+      activeTrack: 0,
+      embedController: null,
+      currentPosition: 0,
+      trackDurationSeconds: 0,
+      tracks: [
+        {
+          title: 'Casablanca',
+          artist: 'Fly By Midnight',
+          album: 'The Fastest Time Of Our Lives',
+          duration: '3:40',
+          genre: 'Indie Pop',
+          spotifyId: '5guLzFXRDXXvygWZ9Nme8S',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02c9893920d6f8c103d7346c65'
+        },
+        {
+          title: 'Loveland',
+          artist: 'Fly By Midnight',
+          album: 'The Fastest Time Of Our Lives',
+          duration: '3:38',
+          genre: 'Indie Pop',
+          spotifyId: '0j0oUnUbksjyQK9l6Az8Zn',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02c9893920d6f8c103d7346c65'
+        },
+        {
+          title: 'Set My Eyes (Live)',
+          artist: 'Michael Bethany',
+          album: 'Overflow (Live)',
+          duration: '5:52',
+          genre: 'Worship',
+          spotifyId: '2qvPXTnSt8lxZKe4MF4lbT',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02adb7e6f2ccd5d703118d3dea'
+        },
+        {
+          title: 'Tulala',
+          artist: 'nicole',
+          album: 'Tulala',
+          duration: '4:22',
+          genre: 'OPM',
+          spotifyId: '1bDaK08ze2UzFEmoeCZfFN',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02030445f2c3ac0dd48025da00'
+        },
+        {
+          title: 'Summa Cum Laude',
+          artist: 'Matt Wilson',
+          album: 'Summa Cum Laude',
+          duration: '3:22',
+          genre: 'OPM',
+          spotifyId: '4xnPpy340UhTzo9JdwF5s0',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02d6fbf7798fbf29e79a6a9eee'
+        },
+        {
+          title: 'Walk With You',
+          artist: 'Michael Bethany',
+          album: 'Walk With You',
+          duration: '6:22',
+          genre: 'Worship',
+          spotifyId: '6XFUYEgpExi8Ag9pfGqUmk',
+          cover: 'https://i.scdn.co/image/ab67616d00001e02b04db228718e428c8b65cd9a'
+        }
+      ]
     }
   },
   mounted() {
@@ -319,10 +499,95 @@ export default {
       this.isDarkMode = true
       document.documentElement.setAttribute('data-theme', 'dark')
     }
+    this.initSpotifyEmbed()
+  },
+  watch: {
+    activeTrack(newIdx) {
+      if (this.embedController) {
+        this.embedController.loadUri(`spotify:track:${this.tracks[newIdx].spotifyId}`)
+        this.embedController.play()
+        this.isPlaying = true
+        this.currentPosition = 0
+      }
+    }
   },
   methods: {
     navigateTo(section) {
       document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+    },
+    initSpotifyEmbed() {
+      window.onSpotifyIframeApiReady = (IFrameAPI) => {
+        const element = this.$refs.sbEmbed
+        const options = {
+          uri: `spotify:track:${this.tracks[0].spotifyId}`
+        }
+        IFrameAPI.createController(element, options, (controller) => {
+          this.embedController = controller
+          controller.addListener('playback_update', (e) => {
+            this.isPlaying = !e.data.isPaused
+            this.currentPosition = e.data.position || 0
+            this.trackDurationSeconds = e.data.duration || 0
+          })
+        })
+      }
+      if (!document.getElementById('spotify-iframe-api')) {
+        const script = document.createElement('script')
+        script.id = 'spotify-iframe-api'
+        script.src = 'https://open.spotify.com/embed/iframe-api/v1'
+        script.async = true
+        document.body.appendChild(script)
+      }
+    },
+    togglePlay() {
+      if (this.embedController) {
+        this.embedController.togglePlay()
+      } else {
+        this.isPlaying = !this.isPlaying
+      }
+    },
+    seekTrack(event) {
+      if (!this.embedController || !this.trackDurationSeconds) return
+      const bar = event.currentTarget
+      const rect = bar.getBoundingClientRect()
+      const pct = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width))
+      const posMs = Math.floor(pct * this.trackDurationSeconds * 1000)
+      this.embedController.seek(posMs)
+    },
+    nextTrack() {
+      if (this.isRepeat === 'one') {
+        if (this.embedController) { this.embedController.seek(0); this.embedController.play() }
+        return
+      }
+      if (this.isShuffled) {
+        let next
+        do { next = Math.floor(Math.random() * this.tracks.length) }
+        while (next === this.activeTrack && this.tracks.length > 1)
+        this.activeTrack = next
+      } else {
+        this.activeTrack = (this.activeTrack + 1) % this.tracks.length
+      }
+    },
+    prevTrack() {
+      if (this.currentPosition > 3 && this.embedController) {
+        this.embedController.seek(0)
+        return
+      }
+      if (this.isShuffled) {
+        let prev
+        do { prev = Math.floor(Math.random() * this.tracks.length) }
+        while (prev === this.activeTrack && this.tracks.length > 1)
+        this.activeTrack = prev
+      } else {
+        this.activeTrack = (this.activeTrack - 1 + this.tracks.length) % this.tracks.length
+      }
+    },
+    toggleShuffle() {
+      this.isShuffled = !this.isShuffled
+    },
+    toggleRepeat() {
+      if (!this.isRepeat) this.isRepeat = 'all'
+      else if (this.isRepeat === 'all') this.isRepeat = 'one'
+      else this.isRepeat = false
     },
     toggleTheme() {
       this.isDarkMode = !this.isDarkMode

@@ -25,15 +25,19 @@
       </div>
 
       <div class="form-group">
-        <label for="email">Email *</label>
+        <label for="email">Gmail *</label>
         <input
           type="email"
           id="email"
           v-model="formData.email"
           required
-          placeholder="your.email@example.com"
+          placeholder="yourname@gmail.com"
           maxlength="100"
+          :class="{ 'input-invalid': emailError }"
+          @blur="validateEmail"
+          @input="emailError = ''"
         />
+        <small v-if="emailError" class="field-error">{{ emailError }}</small>
       </div>
 
       <div class="form-group">
@@ -100,7 +104,8 @@ export default {
       isSubmitting: false,
       // Messages
       successMessage: '',
-      errorMessage: ''
+      errorMessage: '',
+      emailError: ''
     }
   },
   mounted() {
@@ -143,10 +148,11 @@ export default {
         return
       }
 
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(this.formData.email)) {
-        this.errorMessage = 'Please enter a valid email address.'
+      // Gmail validation
+      const gmailRegex = /^[^\s@]+@gmail\.com$/i
+      if (!gmailRegex.test(this.formData.email)) {
+        this.emailError = 'Please enter a valid Gmail address (e.g. yourname@gmail.com).'
+        this.errorMessage = 'Please use a valid Gmail address.'
         return
       }
 
@@ -197,6 +203,15 @@ export default {
     /**
      * Format date to readable format
      */
+    validateEmail() {
+      const gmailRegex = /^[^\s@]+@gmail\.com$/i
+      if (this.formData.email && !gmailRegex.test(this.formData.email)) {
+        this.emailError = 'Please enter a valid Gmail address (e.g. yourname@gmail.com).'
+      } else {
+        this.emailError = ''
+      }
+    },
+
     formatDate(dateString) {
       if (!dateString) {
         return 'Just now'
@@ -221,3 +236,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.input-invalid {
+  border-color: #e53e3e !important;
+  box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2) !important;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.35rem;
+  color: #e53e3e;
+  font-size: 0.8rem;
+}
+</style>
