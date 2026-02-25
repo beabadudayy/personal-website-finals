@@ -971,6 +971,20 @@ section h2 {
   font-weight: 600;
 }
 
+/* Validation states */
+.input-invalid {
+  border-color: #e53e3e !important;
+  background: rgba(229, 62, 62, 0.05) !important;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: #e53e3e;
+  font-weight: 600;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -2708,6 +2722,28 @@ section h2 {
   .db-topbar-right .db-btn-outline { display: none; }
   /* Keep only "Say Hello" button */
   .db-btn-fill { padding: 0.5rem 1.1rem; font-size: 0.82rem; }
+
+  /* Form & Input overflow prevention */
+  .guestbook-form {
+    max-width: 100%;
+    padding: 1.5rem;
+    border-width: 3px;
+  }
+  .form-group input,
+  .form-group textarea {
+    max-width: 100%;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    transform: none;
+    box-shadow: 2px 2px 0px var(--bole);
+  }
+  .comment-header {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .comment-date { font-size: 0.78rem; }
 }
 
 /* ── 540px: small mobile ── */
@@ -2739,7 +2775,12 @@ section h2 {
   .footer-sep, .footer-copy { display: none; }
   .footer-social-row { gap: 0.25rem; }
   /* Guestbook form */
-  .guestbook-form { padding: 1.25rem; }
+  .guestbook-form { padding: 1rem; border-width: 2px; }
+  /* Comment header stacks on very small screens */
+  .comment-header { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+  .comment-date { font-size: 0.72rem; }
+  /* Comment card padding */
+  .comment-card { padding: 1rem; }
   /* Hero sub text */
   .db-hero-sub { font-size: 0.85rem; }
   .db-hero-eyebrow { font-size: 0.62rem; }
