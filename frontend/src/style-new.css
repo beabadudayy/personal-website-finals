@@ -2697,17 +2697,19 @@ section h2 {
   /* Main content takes full width */
   .main-content { margin-left: 0; padding: 1rem 1rem 5rem; }
   /* Footer spans full width on mobile */
-  .footer { left: 0; gap: 0.75rem; padding: 0 0.75rem; }
-  .footer-role { display: none; }
+  .footer { left: 0; gap: 0.5rem; padding: 0 0.75rem; }
+  .footer-name, .footer-role, .footer-copy { font-size: 0.68rem; }
+  .footer-avatar { width: 22px; height: 22px; }
   /* Layout fixes */
   .db-row { grid-template-columns: 1fr; }
   .db-col-right { grid-column: unset; flex-direction: column; }
   .db-feature-card { flex: unset; }
   .db-gallery-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; }
-  .db-hero { flex-direction: column; padding: 2rem 1.5rem 1.5rem; }
-  .db-hero-img-wrap { width: 100%; height: 220px; align-self: auto; }
+  .db-hero { flex-direction: row; padding: 2rem 1.5rem 1.5rem; align-items: center; }
+  .db-hero-img-wrap { width: 160px; height: 200px; flex-shrink: 0; align-self: stretch; }
   .db-hero-title { font-size: 2.25rem; }
   .db-hero-stats { gap: 1.5rem; }
+  .db-hero-badge { font-size: 0.60rem; padding: 0.25rem 0.55rem; gap: 0.2rem; bottom: 0.5rem; letter-spacing: 0.3px; }
   /* Topbar — single row: [hamburger] [flex space] [Say Hello] */
   .db-topbar {
     flex-wrap: nowrap;
@@ -2717,8 +2719,9 @@ section h2 {
     justify-content: space-between;
   }
   /* Hide nav links — navigation is via sidebar drawer */
-  .db-topbar-nav { display: none; }
-  /* Hide the theme toggle button in topbar on mobile (it’s in the sidebar) */
+  /* Nav links - keep visible but smaller */
+  .db-topbar-nav { display: flex; }
+  .db-nav-link { font-size: 0.72rem; padding: 0.3rem 0.65rem; }
   .db-topbar-right .db-btn-outline { display: none; }
   /* Keep only "Say Hello" button */
   .db-btn-fill { padding: 0.5rem 1.1rem; font-size: 0.82rem; }
@@ -2750,9 +2753,11 @@ section h2 {
 @media (max-width: 540px) {
   .main-content { padding: 0.75rem 0.75rem 5rem; }
   /* Hero */
-  .db-hero { padding: 1.5rem 1rem 1rem; }
+  .db-hero { padding: 1.5rem 1rem 1rem; flex-direction: row; align-items: center; }
   .db-hero-title { font-size: 1.9rem; }
-  .db-hero-img-wrap { height: 180px; }
+  .db-hero-img-wrap { width: 120px; height: 160px; flex-shrink: 0; }
+  .db-hero-badge { font-size: 0; padding: 0.3rem 0.5rem; gap: 0; bottom: 0.4rem; }
+  .db-hero-badge i { font-size: 0.85rem; }
   .db-hero-stats { gap: 1rem; }
   .db-hero-sub { font-size: 0.85rem; }
   .db-hero-eyebrow { font-size: 0.62rem; }
@@ -2771,9 +2776,14 @@ section h2 {
   .ms-gallery-bento { grid-template-columns: 1fr 1fr; grid-auto-rows: 120px; }
   .ms-gal-wide { grid-column: span 2; }
   /* Footer */
-  .footer { gap: 0.5rem; }
-  .footer-sep, .footer-copy { display: none; }
-  .footer-social-row { gap: 0.25rem; }
+  .footer { gap: 0.35rem; padding: 0 0.5rem; }
+  .footer-name, .footer-role, .footer-copy { font-size: 0.6rem; }
+  .footer-sep { font-size: 0.6rem; }
+  .footer-avatar { width: 20px; height: 20px; }
+  .footer-social-row { gap: 0.2rem; }
+  .footer-icon-btn { width: 24px; height: 24px; font-size: 0.7rem; }
+  /* Nav links — smaller at 540px */
+  .db-nav-link { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
   /* Guestbook form */
   .guestbook-form { padding: 1rem; border-width: 2px; }
   /* Comment header stacks on very small screens */
