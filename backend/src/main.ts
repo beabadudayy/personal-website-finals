@@ -10,26 +10,8 @@ async function bootstrap() {
 
   // hello
   // Enable CORS for frontend communication
-  const allowedOrigins = [
-    'https://personalwebsitefinalsjuvida.vercel.app',
-    'https://personal-website-finals-nine-ruddy.vercel.app',
-    'http://localhost:5173',
-    'http://localhost:3000',
-    'http://localhost:4173',
-    ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
-  ];
   app.enableCors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (mobile apps, curl, Postman)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) return callback(null, true);
-      // Allow any localhost port for local development
-      if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
-      // Allow all vercel.app preview deployments for this project
-      if (/^https:\/\/(personalwebsitefinalsjuvida|personal-website-finals)[\w-]*\.vercel\.app$/.test(origin)) return callback(null, true);
-      if (/\.vercel\.app$/.test(origin) && origin.includes('raiza-joy-juvida')) return callback(null, true);
-      return callback(new Error('Not allowed by CORS'));
-    },
+    origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization',
