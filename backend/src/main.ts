@@ -8,9 +8,11 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // hello
   // Enable CORS for frontend communication
   const allowedOrigins = [
     'https://personalwebsitefinalsjuvida.vercel.app',
+    'https://personal-website-finals-nine-ruddy.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000',
     'http://localhost:4173',
@@ -24,7 +26,7 @@ async function bootstrap() {
       // Allow any localhost port for local development
       if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
       // Allow all vercel.app preview deployments for this project
-      if (/^https:\/\/personalwebsitefinalsjuvida.*\.vercel\.app$/.test(origin)) return callback(null, true);
+      if (/^https:\/\/(personalwebsitefinalsjuvida|personal-website-finals)[\w-]*\.vercel\.app$/.test(origin)) return callback(null, true);
       return callback(new Error('Not allowed by CORS'));
     },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
