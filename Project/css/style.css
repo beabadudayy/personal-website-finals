@@ -1,9 +1,9 @@
 :root {
-    --seal-brown: #4D2308;
-    --russet: #814414;
-    --philippine-gray: #888A8A;
-    --max-yellow-red: #F1B93D;
-    --deep-champagne: #F3CEA2;
+    --seal-brown: #3E0014;       /* Rustic Red */
+    --russet: #7A002B;           /* Burgundy */
+    --philippine-gray: #AC1634;  /* Cardinal */
+    --max-yellow-red: #E77291;   /* Deep Blush */
+    --deep-champagne: #FFF0F5;   /* Light pink-cream */
     --white: #FFFFFF;
     --transition: all 0.3s ease;
 }

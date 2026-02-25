@@ -198,7 +198,17 @@ export default {
      * Format date to readable format
      */
     formatDate(dateString) {
+      if (!dateString) {
+        return 'Just now'
+      }
+      
       const date = new Date(dateString)
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        return 'Just now'
+      }
+      
       const options = { 
         year: 'numeric', 
         month: 'short', 
