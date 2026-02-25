@@ -140,14 +140,14 @@
                 <div class="ms-edu-yr">2018–22</div>
                 <div class="ms-edu-detail">
                   <div class="ms-edu-deg">Senior High School</div>
-                  <div class="ms-edu-school">STEM Track · Dean's Lister</div>
-                  <span class="ms-edu-track">Science, Technology, Engineering &amp; Math</span>
+                  <div class="ms-edu-school">ICT Track · High Honor Student</div>
+                  <span class="ms-edu-track">Information and Communications Technology</span>
                 </div>
               </div>
             </div>
             <div class="ms-edu-stats">
               <div class="ms-edu-stat"><span>4+</span><label>Years</label></div>
-              <div class="ms-edu-stat"><span>Dean's</span><label>Lister</label></div>
+              <div class="ms-edu-stat"><span>High</span><label>Honor</label></div>
               <div class="ms-edu-stat"><span>BSIT</span><label>Degree</label></div>
             </div>
           </div>
