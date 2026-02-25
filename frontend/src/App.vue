@@ -1,8 +1,11 @@
 ﻿<template>
   <div id="app" class="dashboard-layout">
 
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" :class="{ 'is-visible': isMobileMenuOpen }" @click="isMobileMenuOpen = false"></div>
+
     <!-- Fixed Left Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" :class="{ 'is-open': isMobileMenuOpen }">
       <!-- Logo / Title at top -->
       <div class="sidebar-logo">
         <img
@@ -16,39 +19,44 @@
       <!-- Nav Links -->
       <nav class="sidebar-nav">
         <span class="sidebar-section-label">Menu</span>
-        <a href="#about" @click.prevent="navigateTo('about')" class="sidebar-link">
+        <a href="#about" @click.prevent="navigateTo('about'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-house-door-fill"></i></span>
           <span>About Me</span>
         </a>
-        <a href="#education" @click.prevent="navigateTo('education')" class="sidebar-link">
+        <a href="#education" @click.prevent="navigateTo('education'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-mortarboard-fill"></i></span>
           <span>Education</span>
         </a>
-        <a href="#hobbies" @click.prevent="navigateTo('hobbies')" class="sidebar-link">
+        <a href="#hobbies" @click.prevent="navigateTo('hobbies'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-heart-fill"></i></span>
           <span>Hobbies</span>
         </a>
-        <a href="#goals" @click.prevent="navigateTo('goals')" class="sidebar-link">
+        <a href="#goals" @click.prevent="navigateTo('goals'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-trophy-fill"></i></span>
           <span>Goals</span>
         </a>
-        <a href="#experience" @click.prevent="navigateTo('experience')" class="sidebar-link">
+        <a href="#experience" @click.prevent="navigateTo('experience'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-laptop-fill"></i></span>
           <span>IT Experience</span>
         </a>
-        <a href="#studybeats" @click.prevent="navigateTo('studybeats')" class="sidebar-link">
+        <a href="#studybeats" @click.prevent="navigateTo('studybeats'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-music-note-beamed"></i></span>
           <span>Study Beats</span>
         </a>
-        <a href="#gallery" @click.prevent="navigateTo('gallery')" class="sidebar-link">
+        <a href="#gallery" @click.prevent="navigateTo('gallery'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-images"></i></span>
           <span>Photo Gallery</span>
         </a>
-        <a href="#guestbook" @click.prevent="navigateTo('guestbook')" class="sidebar-link">
+        <a href="#guestbook" @click.prevent="navigateTo('guestbook'); isMobileMenuOpen = false" class="sidebar-link">
           <span class="link-icon"><i class="bi bi-chat-square-text-fill"></i></span>
           <span>Guestbook</span>
         </a>
       </nav>
+
+      <!-- Close button (mobile only) -->
+      <button class="sidebar-close-btn" @click="isMobileMenuOpen = false" aria-label="Close menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
 
       <!-- Footer -->
       <div class="sidebar-footer">
@@ -65,6 +73,9 @@
 
       <!-- ── Top Bar ── -->
       <header class="db-topbar">
+        <button class="db-mobile-menu-btn" @click="isMobileMenuOpen = !isMobileMenuOpen" aria-label="Toggle menu">
+          <i class="bi bi-list"></i>
+        </button>
         <nav class="db-topbar-nav">
           <a href="#about"      @click.prevent="navigateTo('about')"      class="db-nav-link active">Home</a>
           <a href="#experience" @click.prevent="navigateTo('experience')" class="db-nav-link">Projects</a>
@@ -427,6 +438,7 @@ export default {
   data() {
     return {
       isDarkMode: false,
+      isMobileMenuOpen: false,
       isPlaying: false,
       isShuffled: false,
       isRepeat: false,
