@@ -21,6 +21,8 @@ async function bootstrap() {
       // Allow requests with no origin (mobile apps, curl, Postman)
       if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) return callback(null, true);
+      // Allow any localhost port for local development
+      if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
       // Allow all vercel.app preview deployments for this project
       if (/^https:\/\/personalwebsitefinalsjuvida.*\.vercel\.app$/.test(origin)) return callback(null, true);
       return callback(new Error('Not allowed by CORS'));
