@@ -2353,7 +2353,7 @@ section h2 {
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    IT EXPERIENCE
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.ms-exp-section { }
+.ms-exp-section { display: block; }
 
 .ms-exp-header {
   display: flex;
@@ -2461,7 +2461,7 @@ section h2 {
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GALLERY
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.ms-gallery-section { }
+.ms-gallery-section { display: block; }
 
 .ms-gallery-bento {
   display: grid;
@@ -2726,7 +2726,7 @@ section h2 {
   flex: 1;
   border-radius: 2px;
   background: rgba(255,255,255,0.35);
-  height: calc(20% + (var(--i) % 7) * 11%);
+  height: clamp(15%, calc(var(--i) * 1.8%), 55%);
   transition: height 0.3s ease;
   transform-origin: bottom;
 }
@@ -2739,7 +2739,7 @@ section h2 {
 
 @keyframes sbWave {
   0%   { height: 15%; }
-  100% { height: calc(20% + (var(--i) % 7) * 13%); }
+  100% { height: clamp(20%, calc(var(--i) * 2.2%), 70%); }
 }
 
 /* Progress */
