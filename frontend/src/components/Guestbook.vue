@@ -121,8 +121,8 @@ export default {
       this.errorMessage = ''
       
       try {
-        // Get API URL from environment variable or use deployed backend
-        const apiUrl = (import.meta.env.VITE_API_URL || 'https://backend-lime-omega-83.vercel.app').trim()
+        // Get API URL from environment variable or use Vite proxy (relative in dev)
+        const apiUrl = (import.meta.env.VITE_API_URL || '').trim()
         
         const response = await axios.get(`${apiUrl}/api/comments`)
         this.comments = response.data
@@ -159,8 +159,8 @@ export default {
       this.isSubmitting = true
 
       try {
-        // Get API URL from environment variable or use deployed backend
-        const apiUrl = (import.meta.env.VITE_API_URL || 'https://backend-lime-omega-83.vercel.app').trim()
+        // Get API URL from environment variable or use Vite proxy (relative in dev)
+        const apiUrl = (import.meta.env.VITE_API_URL || '').trim()
         
         await axios.post(`${apiUrl}/api/comments`, {
           name: this.formData.name.trim(),
