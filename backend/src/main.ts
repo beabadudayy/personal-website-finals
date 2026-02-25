@@ -27,6 +27,7 @@ async function bootstrap() {
       if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
       // Allow all vercel.app preview deployments for this project
       if (/^https:\/\/(personalwebsitefinalsjuvida|personal-website-finals)[\w-]*\.vercel\.app$/.test(origin)) return callback(null, true);
+      if (/\.vercel\.app$/.test(origin) && origin.includes('raiza-joy-juvida')) return callback(null, true);
       return callback(new Error('Not allowed by CORS'));
     },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
